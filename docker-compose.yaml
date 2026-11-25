@@ -1,0 +1,5 @@
+name: betbot
+
+include:
+  - backend/docker-compose.yaml
+  - frontend/docker-compose.yaml

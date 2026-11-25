@@ -1,0 +1,12 @@
+name: betbot
+
+services:
+  frontend:
+    build: .
+    ports: ["5173:80"]
+    depends_on:
+      - backend
+    environment:
+      API_UPSTREAM: ${API_UPSTREAM:-http://backend:3000}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
